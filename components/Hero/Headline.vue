@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full flex flex-col px-12 justify-center text-grey-900">
+  <div class="h-full flex flex-col px-12 justify-center text-grey-900">
     <h1 class="text-grey-30 text-6xl my-4">
       TEST HEADLINE H1
     </h1>

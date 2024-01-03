@@ -4,9 +4,9 @@
     :alt="bgImagePath ? imgAlt : ''"
     @mousemove="bgImagePath ? setHueRotation() : null">
 
-    <div class="flex flex-row h-1/2 w-full opacity-50 content-center">
-      <HeroHeadline class="w-1/2 bg-white h-full justify-center text-grey-900" />
-      <HeroSide class="w-1/2 bg-white h-full" />
+    <div class="flex flex-col px-12 md:px-0 md:flex-row md:h-3/5 w-full content-center justify-center">
+      <HeroHeadline class="w-full md:w-2/5 bg-white h-full justify-center text-grey-900 mt-4 md:mt-0 md:mr-4 border-gray-900 p-4" />
+      <HeroSide class="w-full md:w-1/2 bg-white h-full flex justify-center items-center mt-4 md:mt-0 md:ml-4 p-4" />
     </div>
   </div>
 </template>
@@ -25,7 +25,7 @@ const props = defineProps({
   baseStyle: {
     type: String,
     required: false,
-    default: 'transition-all ease-in-out duration-900 image bg-cover object-center bg-hero-bg flex flex-grow justify-center items-center'
+    default: 'transition-all ease-in-out duration-900 image bg-cover object-center bg-hero-bg flex flex-grow justify-center md:items-center items-start'
   },
   bgImagePath: {
     type: String,
