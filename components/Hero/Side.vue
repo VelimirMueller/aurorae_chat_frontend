@@ -9,7 +9,7 @@
       </div>
       <div
         ref="container"
-        class="w-full h-full overflow-y-scroll p-2">
+        class="w-full h-1/4 overflow-y-scroll p-2">
         <template v-for="request, idx in chat" :key="idx">
           <h4>
             YOU
@@ -59,13 +59,20 @@ const socket = ref()
 const isLoading = ref(false)
 const container = ref()
 
+const scrollToBottom = () => {
+  setTimeout(() => {
+    container.value.scrollTop = container.value.scrollHeight
+    console.log('triggered')
+  }, 50)
+}
+
 const submitPrompt = (): void => {
   if (!isLoading.value) {
     isLoading.value = true
     chat.value.push(prompt.value)
     socket.value.send(prompt.value)
     prompt.value = resetString()
-    console.log(container.value.scrollTop)
+    scrollToBottom()
   }
 }
 
@@ -82,7 +89,7 @@ const connectChat = () => {
 const listenToSocket = () => {
   socket.value.onmessage = (response: WebsocketResponse) => {
     answers.value.push(JSON.stringify(response.data))
-    container.value.scrollTop += 200
+    scrollToBottom()
     isLoading.value = false
   }
 }
