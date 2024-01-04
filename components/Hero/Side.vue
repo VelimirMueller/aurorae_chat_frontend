@@ -82,7 +82,7 @@ const connectChat = () => {
 const listenToSocket = () => {
   socket.value.onmessage = (response: WebsocketResponse) => {
     answers.value.push(JSON.stringify(response.data))
-    container.value.scrollTop -= 20
+    container.value.scrollTop += 200
     isLoading.value = false
   }
 }
