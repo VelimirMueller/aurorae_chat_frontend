@@ -6,14 +6,24 @@
     </a>
     <ul class="flex flex-row gap-4 h-full justify-center space-between flex-wrap items-center w-full">
       <!-- Navigation Items -->
-      <li class="justify-between flex">
-        nav-item-1
-      </li>
-      <li>nav-item-2</li>
-      <li>nav-item-3</li>
+      <template
+        v-for="link, idx in navLinks"
+        :key="idx">
+        <li>
+          <a :href="link.href">{{ link.text }}</a>
+        </li>
+      </template>
     </ul>
     <span class="flex items-center h-full space-x-3 w-40 flex justify-center items-center">
       <button>click me</button>
     </span>
   </div>
 </template>
+
+<script setup lang="ts">
+const navLinks = [
+  { href: '#', text: 'link-1' },
+  { href: '#', text: 'link-2' },
+  { href: '#', text: 'link-3' }
+]
+</script>
