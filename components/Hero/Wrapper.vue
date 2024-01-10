@@ -3,15 +3,18 @@
     :class="`${heroStyle} ${baseStyle} hue-rotate-${filters.hueFilter}`"
     :alt="bgImagePath ? imgAlt : ''"
     @mousemove="bgImagePath ? setHueRotation() : null">
-    <div class="flex flex-col px-12 md:px-0 md:flex-row md:h-3/5 w-full content-center justify-center">
-      <HeroHeadline class="w-full md:w-2/5 bg-white h-full justify-center text-gray-900 mt-4 md:mt-0 md:mr-4 border-gray-900" />
-      <HeroSide class="w-full md:w-1/2 bg-white h-full flex justify-center items-center mt-4 md:mt-0 md:ml-4 p-4" />
-    </div>
+    <aurorae-container>
+      <template #content>
+        <HeroHeadline class="w-full md:w-1/3 bg-white h-full justify-center text-gray-900 mt-4 md:mt-0 md:mr-4" />
+        <HeroSide class="w-full md:w-2/3 bg-white h-full flex justify-center items-center mt-4 md:mt-0 md:ml-4 p-4" />
+      </template>
+    </aurorae-container>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed, defineProps } from 'vue'
+import AuroraeContainer from '../../ui/wrapper/AuroraeContainer'
 
 const mainStore = useMainStore()
 const { filters, setHueFilter } = mainStore

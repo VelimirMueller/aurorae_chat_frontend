@@ -1,5 +1,5 @@
 <template>
-  <div class="h-12 flex">
+  <nav class="h-12 flex">
     <a class="flex items-center h-full" href="#">
       <img class="w-12" src="~/assets/img/aurorae-fav-logo.png">
       <p class="w-60 text-m font-bold">The Aurorae Project</p>
@@ -14,10 +14,10 @@
         </li>
       </template>
     </ul>
-    <span class="flex items-center h-full space-x-3 w-40 flex justify-center items-center">
+    <span class="flex items-center h-full space-x-3 w-40 justify-center">
       <button>click me</button>
     </span>
-  </div>
+  </nav>
 </template>
 
 <script setup lang="ts">

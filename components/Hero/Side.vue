@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-lg bag-gray-900 border-2 border-gray-900">
+  <div class="rounded-lg h-[450px]">
     <div class="w-full h-full flex flex-col rounded-md bg-gray-50">
       <div :class="`flex justify-center items-center rounded-md py-4 w-full h-1/8 ${isLoading ? 'bg-gray-100' : 'bg-cyan-100' }`">
         {{ `STATUS: ${isLoading ? 'awaiting response' : ' awaiting prompt' }` }}
@@ -9,24 +9,21 @@
         class="w-full h-3/4 overflow-y-scroll p-2 rounded overflow-x-hidden">
         <hr class="w-1/4 mr-auto ml-auto">
         <h4 class="text-center">
-          {{ currentDay }}
+          {{ getDate(dateFormat.day) }}
         </h4>
         <hr class="w-1/4 mr-auto ml-auto">
         <template v-for="request, idx in chat" :key="idx">
-          <h4>
-            {{ `YOU: (${currentHour})` }}
-          </h4>
+          <h4 v-html="`YOU: (${getDate(dateFormat.hour) })`" />
           <p class="text-gray-900 mb-2 bg-gray-200 w-4/5 p-2 rounded">
             {{ request }}
           </p>
           <h4 class="text-right">
-            {{ `AURORAE: (${answers.length.toString() === chat.length.toString() ? currentHour : '-'})` }}
+            {{ 'AURORAE: ' }}
           </h4>
           <p
             v-if="answers[idx]"
-            class="text-cyan-900 bg-cyan-100 mb-2 w-4/5 ml-auto p-2 rounded">
-            {{ answers[idx] }}
-          </p>
+            class="text-cyan-900 bg-cyan-100 mb-2 w-4/5 ml-auto p-2 rounded"
+            v-html="answers[idx].replace('\n', '<br>')" />
           <div
             v-else
             class="loader ml-auto" />
@@ -73,8 +70,7 @@ const dateFormat: DateFormat = {
   day: DateEnum.day
 }
 
-const currentHour: string = useDate(dateFormat.hour)
-const currentDay: string = useDate(dateFormat.day)
+const getDate = useDate
 
 const prompt: Ref<string> = ref('')
 const answers: Ref<string[]> = ref([])

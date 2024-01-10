@@ -1,5 +1,5 @@
 enum DateEnum {
-  hour = 'HH:MM',
+  hour = 'HH:mm:ss',
   day = 'DD.MM.YY'
 }
 

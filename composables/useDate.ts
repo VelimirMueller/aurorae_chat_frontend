@@ -1,6 +1,8 @@
 import dayJs from 'dayjs'
-import { DateEnum } from '~/types'
+import type { DateEnum, Dayjs } from '~/types'
 
 export const useDate = (format: DateEnum): string => {
-  return dayJs().format(format)
+  const now: Dayjs = dayJs()
+
+  return now.format(format)
 }

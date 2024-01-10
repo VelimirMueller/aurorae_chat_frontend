@@ -1,5 +1,5 @@
 <template>
-  <div class="h-12 absolute">
+  <div>
     <h2>Footer</h2>
   </div>
 </template>
