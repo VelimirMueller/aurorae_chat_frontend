@@ -7,7 +7,9 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-bg': "url('/img/Aurorae-drk.png')"
+        'hero-bg': "url('/img/Aurorae-drk.png')",
+        'logo-bg': "url('/img/logo.png')",
+        'card-bg': "url('/img/card-bg.png')"
       }
     }
   },
