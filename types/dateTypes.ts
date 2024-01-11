@@ -4,8 +4,8 @@ enum DateEnum {
 }
 
 interface DateFormat {
-  hour: DateEnum
-  day: DateEnum
+  hour?: DateEnum
+  day?: DateEnum
 }
 
 interface WebsocketResponse {
