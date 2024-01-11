@@ -51,9 +51,7 @@
                     <ChatConversationAurorae
                       :answers="answers"
                       :index="idx"
-                      :request="request"
-                      :time="currentTime"
-                      @new="setCurrentTime" />
+                      :request="request" />
                   </template>
                 </div>
                 <div class="w-full h-1/4">
@@ -98,11 +96,8 @@ import type { DateFormat, WebsocketResponse } from '~/types'
 import { DateEnum } from '~/types'
 
 const dateFormat: DateFormat = {
-  hour: DateEnum.hour,
   day: DateEnum.day
 }
-
-const getDate = useDate
 
 const prompt: Ref<string> = ref('')
 const answers: Ref<string[]> = ref([])
@@ -111,11 +106,7 @@ const socket = ref()
 const isLoading = ref(false)
 const container = ref()
 
-const currentTime = ref()
-
-const setCurrentTime = () => {
-  currentTime.value = getDate(dateFormat.hour)
-}
+const getDate = useDate
 
 const scrollToBottom = () => {
   setTimeout(() => {
@@ -237,25 +228,5 @@ onMounted(() => {
   87% {
     box-shadow: .2em -.2em 0 0 currentcolor;
   }
-}
-
-      /* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #fff;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #555;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #999;
 }
 </style>

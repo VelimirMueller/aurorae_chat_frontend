@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4 v-text="`YOU: (${initialTime ?? props.time})`" />
+    <h4 v-text="`YOU: (${timeStamp})`" />
     <p class="text-gray-900 mb-2 bg-gray-200 w-4/5 p-2 rounded">
       {{ props.request }}
     </p>
@@ -18,15 +18,14 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
-
-const emits = defineEmits(['new'])
+import { DateEnum } from '~/types'
+import type { DateFormat } from '~/types'
 
 const props = defineProps({
   answers: {
     type: Array,
     required: false,
-    default: () => []
+    default: (): string[] => []
   },
   index: {
     type: Number,
@@ -37,14 +36,11 @@ const props = defineProps({
     type: String,
     required: false,
     default: ''
-  },
-  time: {
-    type: String,
-    required: true
   }
 })
 
-onMounted(() => {
-  emits('new')
-})
+const dateFormat: DateFormat = {
+  hour: DateEnum.hour
+}
+const timeStamp: string = useDate(dateFormat.hour)
 </script>
