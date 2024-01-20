@@ -1,11 +1,7 @@
 <template>
   <CardAurorae class="w-3/4 bg-gray-50 h-full">
     <template #card-header>
-      <h3 class="p-8">
-        <div :class="`flex justify-center items-center rounded-md py-4 w-full h-1/8 ${isLoading ? 'bg-gray-100' : 'bg-cyan-100' }`">
-          {{ `STATUS: ${isLoading ? 'awaiting response' : ' awaiting prompt' }` }}
-        </div>
-      </h3>
+      <ChatHeader :is-loading="isLoading" />
     </template>
     <template #card-body>
       <div class="w-full h-full p-8 bg-gray-100">
@@ -37,14 +33,26 @@
 </template>
 
 <script setup lang="ts">
-import type { DateFormat, WebsocketResponse } from '~/types'
+import { computed } from 'vue'
+import { storeToRefs } from 'pinia'
+import type { DateFormat } from '~/types'
 import { DateEnum } from '~/types'
+import { scrollToElementBottom } from '~/composables/useDomUtils'
+import { connectChat, listenToSocket, reconnectSocketOnDc } from '~/composables/useHandleSocket'
+
+const mainStore = useMainStore()
+const { isLoading } = storeToRefs(mainStore)
 
 const answers: Ref<string[]> = ref([])
 const chat: Ref<string[]> = ref([])
-const socket = ref()
-const isLoading = ref(false)
-const container = ref()
+const socket: Ref<WebSocket> = ref()
+const container: Ref<HTMLElement> = ref()
+
+const loadingState = computed(() => {
+  return answers.value.length !== chat.value.length
+})
+
+isLoading.value = loadingState
 
 const getDate = useDate
 
@@ -52,45 +60,20 @@ const dateFormat: DateFormat = {
   day: DateEnum.day
 }
 
-const scrollToBottom = (): void => {
-  setTimeout(() => {
-    container.value.scrollTop = container.value.scrollHeight
-  }, 50)
-}
-
 const submitPrompt = (prompt: string): void => {
   if (!isLoading.value) {
-    isLoading.value = true
     chat.value.push(prompt)
     socket.value.send(prompt)
-    scrollToBottom()
-  }
-}
-
-const connectChat = (): void => {
-  if (!socket.value) {
-    socket.value = new WebSocket('ws://' + '0.0.0.0:5000' + '/api_ws')
-  }
-}
-
-const listenToSocket = (): void => {
-  socket.value.onmessage = (response: WebsocketResponse) => {
-    answers.value.push(JSON.stringify(response.data))
-    scrollToBottom()
-    isLoading.value = false
-  }
-}
-
-const reconnectSocketOnDc = (): void => {
-  socket.value.onclose = (): void => {
-    socket.value = new WebSocket('ws://' + '0.0.0.0:5000' + '/api_ws')
-    isLoading.value = false
+    scrollToElementBottom(container.value)
   }
 }
 
 onMounted(() => {
   connectChat()
-  listenToSocket()
-  reconnectSocketOnDc()
+    .then((ws: WebSocket) => {
+      socket.value = ws
+      listenToSocket(socket.value, answers.value, container.value)
+      reconnectSocketOnDc(socket.value)
+    })
 })
 </script>

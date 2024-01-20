@@ -2,7 +2,7 @@
   <div class="loader ml-auto" />
 </template>
 
-<style>
+<style scoped lang="scss">
 .loader {
   transform: rotateZ(45deg);
   perspective: 1000px;
