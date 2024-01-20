@@ -5,7 +5,7 @@
         v-if="highlightHeadline"
         aria-hidden="true"
         class="w-5/6 mr-auto ml-auto my-4">
-      <h4 class="text-2xl px-4 font-bold">
+      <h4 class="text-2xl px-4 font-bold text-center">
         {{ props.headline }}
       </h4>
       <hr
