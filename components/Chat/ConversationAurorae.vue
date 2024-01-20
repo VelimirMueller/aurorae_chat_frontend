@@ -11,9 +11,7 @@
       v-if="props.answers[props.index]"
       class="text-cyan-900 bg-cyan-100 mb-2 w-4/5 ml-auto p-2 rounded"
       v-text="props.answers[props.index]" />
-    <div
-      v-else
-      class="loader ml-auto" />
+    <LoaderAurorae v-else />
   </div>
 </template>
 
