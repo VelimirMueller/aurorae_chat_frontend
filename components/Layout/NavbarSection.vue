@@ -19,10 +19,6 @@
         <ph-dots-three-outline :size="32" />
       </button>
     </span>
-    <SideMenuModal 
-      v-if="isMenu"
-      @toggleModal="toggleMenu"
-      class="h-screen w-full bg-white" />
   </nav>
 </template>
 
