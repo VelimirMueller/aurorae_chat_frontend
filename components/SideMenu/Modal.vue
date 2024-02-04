@@ -1,14 +1,17 @@
 <template>
-    <div class="w-full h-full">
-        {{ 'sidemenu' }}
-        <ph-dots-three-outline @click="closeModal" :size="32" />
-    </div>
+  <div class="w-full h-full relative">
+    <ph-x-square
+      class="absolute top-0 right-0 m-4"
+      :size="32"
+      @click="closeModal" />
+    {{ 'it`s a side-menu' }}
+  </div>
 </template>
 <script setup lang="ts">
-import { PhDotsThreeOutline } from '@phosphor-icons/vue'
+import { PhXSquare } from '@phosphor-icons/vue'
 
 const emit = defineEmits(['toggleModal'])
 const closeModal = () => {
-    emit('toggleModal')
+  emit('toggleModal')
 }
 </script>

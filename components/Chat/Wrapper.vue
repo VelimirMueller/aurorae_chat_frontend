@@ -1,5 +1,5 @@
 <template>
-  <template v-if="isMenu">
+  <template v-if="!isMenu">
     <CardAurorae class="w-3/4 bg-gray-50 h-full">
       <template #card-header>
         <ChatHeader :is-loading="isLoading" />
@@ -29,13 +29,19 @@
         <ChatControls
           :is-loading="isLoading"
           @submit="submitPrompt" />
-    </template>
-  </CardAurorae>
+      </template>
+    </CardAurorae>
   </template>
   <template v-else>
-    <SideMenuModal 
-      class="h-screen w-screen bg-white"
-      @toggleModal="toggleMenu" />
+    <CardAurorae
+      :is-menu-wrapper="isMenu"
+      class="w-3/4 bg-gray-50 h-full">
+      <template #side-menu>
+        <SideMenuModal
+          class="h-full w-full bg-red-500 flex flex-col items-center justify-center relative"
+          @toggle-modal="toggleMenu" />
+      </template>
+    </CardAurorae>
   </template>
 </template>
 
