@@ -9,7 +9,7 @@
     </h4>
     <p
       v-if="props.answers[props.index]"
-      class="text-cyan-900 bg-cyan-100 mb-2 w-4/5 ml-auto p-2 rounded pre-formatted"
+      class="text-cyan-900 bg-cyan-100 mb-2 w-4/5 ml-auto p-2 rounded"
       v-text="props.answers[props.index]" />
     <LoaderAurorae v-else />
   </div>
@@ -42,9 +42,3 @@ const dateFormat: DateFormat = {
 }
 const timeStamp: string = useDate(dateFormat.hour)
 </script>
-
-<style>
-.pre-formatted {
-  white-space: pre;
-}
-</style>

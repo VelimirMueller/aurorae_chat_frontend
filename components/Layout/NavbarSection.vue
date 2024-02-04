@@ -9,12 +9,12 @@
       <template
         v-for="link, idx in navLinks"
         :key="idx">
-        <li v-if="!isMenu">
+        <li>
           <a :href="link.href">{{ link.text }}</a>
         </li>
       </template>
     </ul>
-    <span v-if="!isMenu" class="flex items-center h-full space-x-3 w-40 justify-center">
+    <span class="flex items-center h-full space-x-3 w-40 justify-center">
       <button @click="toggleMenu">
         <ph-dots-three-outline :size="32" />
       </button>
@@ -24,11 +24,11 @@
 
 <script setup lang="ts">
 import { PhDotsThreeOutline } from '@phosphor-icons/vue'
+import { useMainStore } from '~/composables/useMainStore'
 
-const isMenu = ref(false)
+const { isMenu } = storeToRefs(useMainStore())
 const toggleMenu = () => {
   isMenu.value = !isMenu.value
-  console.log(isMenu.value)
 }
 const navLinks = [
   { href: '#', text: 'back to app' }

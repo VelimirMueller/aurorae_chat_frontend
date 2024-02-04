@@ -34,7 +34,7 @@
   </template>
   <template v-else>
     <SideMenuModal 
-      class="h-screen w-screen bg-white absolute"
+      class="h-screen w-screen bg-white"
       @toggleModal="toggleMenu" />
   </template>
 </template>
@@ -48,16 +48,16 @@ import { scrollToElementBottom } from '~/composables/useDomUtils'
 import { connectChat, listenToSocket, reconnectSocketOnDc } from '~/composables/useHandleSocket'
 
 const mainStore = useMainStore()
-const { isLoading } = storeToRefs(mainStore)
+const { isLoading, isMenu } = storeToRefs(mainStore)
 
 const answers: Ref<string[]> = ref([])
 const chat: Ref<string[]> = ref([])
 const socket: Ref<WebSocket> = ref()
 const container: Ref<HTMLElement> = ref()
-const isMenu = ref(false)
 const toggleMenu = () => {
   isMenu.value = !isMenu.value
 }
+
 const loadingState = computed(() => {
   return answers.value.length !== chat.value.length
 })

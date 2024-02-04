@@ -33,3 +33,7 @@
     </ContainerAurorae>
   </div>
 </template>
+
+<script setup lang="ts">
+const isMenu = ref(false)
+</script>

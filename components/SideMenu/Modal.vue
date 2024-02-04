@@ -1,5 +1,5 @@
 <template>
-    <div class="relative w-screen">
+    <div class="w-full h-full">
         {{ 'sidemenu' }}
         <ph-dots-three-outline @click="closeModal" :size="32" />
     </div>
