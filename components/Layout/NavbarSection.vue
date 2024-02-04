@@ -9,21 +9,32 @@
       <template
         v-for="link, idx in navLinks"
         :key="idx">
-        <li>
+        <li v-if="!isMenu">
           <a :href="link.href">{{ link.text }}</a>
         </li>
       </template>
     </ul>
-    <span class="flex items-center h-full space-x-3 w-40 justify-center">
-      <button>click me</button>
+    <span v-if="!isMenu" class="flex items-center h-full space-x-3 w-40 justify-center">
+      <button @click="toggleMenu">
+        <ph-dots-three-outline :size="32" />
+      </button>
     </span>
+    <SideMenuModal 
+      v-if="isMenu"
+      @toggleModal="toggleMenu"
+      class="h-screen w-full bg-white" />
   </nav>
 </template>
 
 <script setup lang="ts">
+import { PhDotsThreeOutline } from '@phosphor-icons/vue'
+
+const isMenu = ref(false)
+const toggleMenu = () => {
+  isMenu.value = !isMenu.value
+  console.log(isMenu.value)
+}
 const navLinks = [
-  { href: '#', text: 'link-1' },
-  { href: '#', text: 'link-2' },
-  { href: '#', text: 'link-3' }
+  { href: '#', text: 'back to app' }
 ]
 </script>

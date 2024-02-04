@@ -8,7 +8,7 @@
         <div class="w-full h-full flex flex-col rounded-md bg-gray-50">
           <div
             ref="container"
-            class="w-full h-3/4 overflow-y-scroll p-2 rounded overflow-x-hidden">
+            class="w-full h-full overflow-y-scroll p-2 rounded overflow-x-hidden">
             <hr class="w-1/4 mr-auto ml-auto">
             <h4 class="text-center">
               {{ getDate(dateFormat.day) }}
