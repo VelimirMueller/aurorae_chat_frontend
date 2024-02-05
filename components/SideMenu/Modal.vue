@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full h-full relative">
+  <div class="w-full lg:w-full h-full relative">
     <ph-x-square
-      class="absolute top-0 right-0 m-4"
+      class="absolute top-0 right-0"
       :size="32"
       @click="closeModal" />
     {{ 'it`s a side-menu' }}

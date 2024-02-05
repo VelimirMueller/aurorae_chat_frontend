@@ -1,11 +1,11 @@
 <template>
   <template v-if="!isMenu">
-    <CardAurorae class="w-3/4 bg-gray-50 h-full">
+    <CardAurorae class="lg:w-3/4 w-full bg-gray-50 h-full">
       <template #card-header>
         <ChatHeader :is-loading="isLoading" />
       </template>
       <template #card-body>
-        <div class="w-full h-full p-8 bg-gray-100">
+        <div class="w-full h-full lg:p-8 bg-gray-100">
           <div class="w-full h-full flex flex-col rounded-md bg-gray-50">
             <div
               ref="container"
@@ -35,7 +35,7 @@
   <template v-else>
     <CardAurorae
       :is-menu-wrapper="isMenu"
-      class="w-3/4 bg-gray-50 h-full">
+      class="w-screen lg:w-3/4 bg-gray-50 h-full">
       <template #side-menu>
         <SideMenuModal
           class="h-full w-full bg-red-500 flex flex-col items-center justify-center relative"

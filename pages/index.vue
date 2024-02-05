@@ -3,7 +3,7 @@
     <ContainerAurorae>
       <template #content>
         <CardAurorae
-          class="w-1/4"
+          class="w-1/4 hidden lg:flex"
           :is-bg="true">
           <template #card-header>
             <CardAuroraeHeader area="chatbot" />
