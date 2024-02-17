@@ -6,7 +6,7 @@ import { WsMockServer } from './utils/webSocketFactory'
 
 import ChatWrapper from '~/components/Chat/Wrapper.vue'
 
-describe('ChatWrapper.vue', () => {
+describe('Check if ChatWrapper.vue behaves and mounts correctly', () => {
   const currentDate = new Date()
   const formattedDate = currentDate.toLocaleDateString('de-DE', {
     day: '2-digit',

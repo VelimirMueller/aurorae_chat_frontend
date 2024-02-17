@@ -2,15 +2,15 @@
   <div class="h-[90vh]">
     <ContainerAurorae>
       <template #content>
-        <CardAurorae
+        <AuroraeCardWrapper
           class="w-1/4 hidden lg:flex"
           :is-bg="true">
           <template #card-header>
-            <CardAuroraeHeader area="chatbot" />
+            <AuroraeCardHeader area="chatbot" />
           </template>
           <template #card-body>
             <aside class="mt-4 w-full flex flex-col justify-center items-center">
-              <BlockquoteAurorae
+              <AuroraeBlockquoteWrapper
                 headline="What is Aurorae?"
                 :highlight-headline="true">
                 The name "Aurorae" is a beautiful and poetic name that refers to the natural light display
@@ -18,7 +18,7 @@
                 <br><br>
                 It is named after the Roman goddess of the dawn, Aurora,
                 who was believed to bring joy and happiness.
-              </BlockquoteAurorae>
+              </AuroraeBlockquoteWrapper>
             </aside>
           </template>
           <template #card-footer>
@@ -27,7 +27,7 @@
               <ButtonCta class="w-1/3" />
             </div>
           </template>
-        </CardAurorae>
+        </AuroraeCardWrapper>
         <ChatWrapper />
       </template>
     </ContainerAurorae>

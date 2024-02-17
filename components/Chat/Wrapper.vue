@@ -1,6 +1,6 @@
 <template>
   <template v-if="!isMenu">
-    <CardAurorae class="lg:w-3/4 w-full bg-gray-50 h-full">
+    <AuroraeCardWrapper class="lg:w-3/4 w-full bg-gray-50 h-full">
       <template #card-header>
         <ChatHeader
           id="chatHeader"
@@ -35,10 +35,10 @@
           :is-loading="isLoading"
           @submit="submitPrompt" />
       </template>
-    </CardAurorae>
+    </AuroraeCardWrapper>
   </template>
   <template v-else>
-    <CardAurorae
+    <AuroraeCardWrapper
       id="menu"
       :is-menu-wrapper="isMenu"
       class="w-screen lg:w-3/4 bg-gray-50 h-full">
@@ -47,7 +47,7 @@
           class="h-full w-full bg-red-500 flex flex-col items-center justify-center relative"
           @toggle-modal="toggleMenu" />
       </template>
-    </CardAurorae>
+    </AuroraeCardWrapper>
   </template>
 </template>
 
