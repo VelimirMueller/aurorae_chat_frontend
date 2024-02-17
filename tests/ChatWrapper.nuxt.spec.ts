@@ -1,6 +1,5 @@
 // @vitest-environment nuxt
-import { afterAll, beforeAll, it, describe, expect } from 'vitest'
-import type { Server } from 'mock-socket'
+import { beforeAll, it, describe, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { conf } from './config/config'
 import { WsMockServer } from './utils/webSocketFactory'
@@ -15,10 +14,11 @@ describe('ChatWrapper.vue', () => {
     year: '2-digit'
   })
 
-  let server: Server
-
   beforeAll(() => {
-    server = new WsMockServer(conf.WS_URL, conf.WS_API, conf.WS_PORT)
+    const server = new WsMockServer(conf.WS_URL, conf.WS_API, conf.WS_PORT)
+    server.on('message', (socket) => {
+      socket.send('hi there, im a mock websocket server.')
+    })
   })
 
   it('Check if date header is set in correct format', () => {
@@ -32,12 +32,11 @@ describe('ChatWrapper.vue', () => {
     expect(header.text().indexOf(chatHeaderDefaultTextSegment)).not.toBe(-1)
   })
 
-  it('Receives websocket messages', async () => {
-    const component = mount(ChatWrapper)
-    await component.vm.$nextTick()
-  })
-
-  afterAll(() => {
-    server.close()
+  it('Has Send and clear prompt buttons', () => {
+    const component = mount(ChatWrapper).find('#controls')
+    const componentHtml = component.html()
+    expect(component.findAll('button').length).toBe(2)
+    expect(componentHtml).toContain('SEND')
+    expect(componentHtml).toContain('clear prompt')
   })
 })
