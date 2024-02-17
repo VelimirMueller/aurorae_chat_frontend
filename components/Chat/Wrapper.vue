@@ -18,7 +18,7 @@
                 {{ getDate(dateFormat.day) }}
               </h4>
               <hr class="w-1/4 mr-auto ml-auto">
-              <template v-for="request, idx in chat" :key="`conversation-${idx}`">
+              <template v-for="request, idx in chat" :key="idx">
                 <ChatConversationAurorae
                   id="conversation"
                   :answers="answers"
@@ -69,9 +69,7 @@ const toggleMenu = () => {
   isMenu.value = !isMenu.value
 }
 
-const loadingState: Ref<Boolean> = ref(answers.value.length !== chat.value.length)
-
-isLoading.value = loadingState
+isLoading.value = ref(answers.value.length !== chat.value.length).value
 
 const getDate = useDate
 
