@@ -2,21 +2,25 @@
   <template v-if="!isMenu">
     <CardAurorae class="lg:w-3/4 w-full bg-gray-50 h-full">
       <template #card-header>
-        <ChatHeader :is-loading="isLoading" />
+        <ChatHeader
+          id="chatHeader"
+          :is-loading="isLoading" />
       </template>
       <template #card-body>
         <div class="w-full h-full lg:p-8 bg-gray-100">
           <div class="w-full h-full flex flex-col rounded-md bg-gray-50">
             <div
+              id="date"
               ref="container"
               class="w-full h-full overflow-y-scroll p-2 rounded overflow-x-hidden">
               <hr class="w-1/4 mr-auto ml-auto">
-              <h4 class="text-center">
+              <h4 id="date" class="text-center">
                 {{ getDate(dateFormat.day) }}
               </h4>
               <hr class="w-1/4 mr-auto ml-auto">
-              <template v-for="request, idx in chat" :key="idx">
+              <template v-for="request, idx in chat" :key="`conversation-${idx}`">
                 <ChatConversationAurorae
+                  id="conversation"
                   :answers="answers"
                   :index="idx"
                   :request="request" />
@@ -27,6 +31,7 @@
       </template>
       <template #card-footer>
         <ChatControls
+          id="controls"
           :is-loading="isLoading"
           @submit="submitPrompt" />
       </template>
@@ -34,6 +39,7 @@
   </template>
   <template v-else>
     <CardAurorae
+      id="menu"
       :is-menu-wrapper="isMenu"
       class="w-screen lg:w-3/4 bg-gray-50 h-full">
       <template #side-menu>
@@ -46,7 +52,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
 import type { DateFormat } from '~/types'
 import { DateEnum } from '~/types'
@@ -64,9 +69,7 @@ const toggleMenu = () => {
   isMenu.value = !isMenu.value
 }
 
-const loadingState = computed(() => {
-  return answers.value.length !== chat.value.length
-})
+const loadingState: Ref<Boolean> = ref(answers.value.length !== chat.value.length)
 
 isLoading.value = loadingState
 
