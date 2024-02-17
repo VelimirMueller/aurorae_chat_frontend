@@ -10,7 +10,7 @@ const connectChat = (): Promise<WebSocket> => {
 
 const listenToSocket = (socket: WebSocket, answers: string[], conversationContainer: HTMLElement): void => {
   if (socket) {
-    socket.onmessage = (response: WebsocketResponse) => {
+    socket.onmessage = (response: WebsocketResponse): void => {
       answers.push(JSON.stringify(response.data))
       scrollToElementBottom(conversationContainer)
     }
