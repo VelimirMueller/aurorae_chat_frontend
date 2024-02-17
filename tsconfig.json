@@ -2,6 +2,7 @@
   // https://nuxt.com/docs/guide/concepts/typescript
   "extends": "./.nuxt/tsconfig.json",
   // ...
+  "esModuleInterop": true,
   "parser": "@typescript-eslint/parser",
   "'plugins'": ["@typescript-eslint"],
   "overrides": [
@@ -22,7 +23,8 @@
     },
   ],
   "compilerOptions": {
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "experimentalDecorators": true
   }
   // ...
 }
