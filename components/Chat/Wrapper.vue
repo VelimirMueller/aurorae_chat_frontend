@@ -12,7 +12,7 @@
             <div
               id="date"
               ref="container"
-              class="w-full h-full overflow-y-scroll p-2 rounded overflow-x-hidden">
+              class="w-full h-full overflow-y-auto p-2 rounded overflow-x-hidden">
               <hr class="w-1/4 mr-auto ml-auto">
               <h4 id="date" class="text-center">
                 {{ getDate(dateFormat.day) }}

@@ -9,11 +9,12 @@
             <AuroraeCardHeader area="chatbot" />
           </template>
           <template #card-body>
-            <aside class="mt-4 w-full flex flex-col justify-center items-center">
+            <aside class="w-full flex flex-col justify-center items-center overflow-y-auto h-[100%]">
               <AuroraeBlockquoteWrapper
+                class="h-[100%]"
                 headline="What is Aurorae?"
                 :highlight-headline="true">
-                <div>
+                <div class="flex flex-col">
                   <p class="p-2 my-4">
                     The name "Aurorae" is a beautiful and poetic name that refers to the natural light display
                     that occurs in the polar regions.
@@ -27,9 +28,9 @@
             </aside>
           </template>
           <template #card-footer>
-            <div class="flex flex-row w-full justify-center items-center h-full pb-8">
+            <div class="flex flex-row w-full justify-center items-center h-full pb-8 px-4">
               <AuroraeButtonTypes class="w-1/3 mr-2" />
-              <AuroraeButtonTypes class="w-1/3 mr-2" />
+              <AuroraeButtonTypes class="w-1/3 ml-2" />
             </div>
           </template>
         </AuroraeCardWrapper>
