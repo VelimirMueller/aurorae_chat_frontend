@@ -23,12 +23,20 @@
                     It is named after the Roman goddess of the dawn, Aurora,
                     who was believed to bring joy and happiness.
                   </p>
+                  <p class="p-2 my-4">
+                    The name "Aurorae" is a beautiful and poetic name that refers to the natural light display
+                    that occurs in the polar regions.
+                  </p>
+                  <p class="p-2 my-4">
+                    It is named after the Roman goddess of the dawn, Aurora,
+                    who was believed to bring joy and happiness.
+                  </p>
                 </div>
               </AuroraeBlockquoteWrapper>
             </aside>
           </template>
           <template #card-footer>
-            <div class="flex flex-row w-full justify-center items-center h-full pb-8 px-4">
+            <div class="flex flex-row w-full justify-center items-end h-full bottom-0 pb-8 px-4">
               <AuroraeButtonTypes class="w-1/3 mr-2" />
               <AuroraeButtonTypes class="w-1/3 ml-2" />
             </div>
