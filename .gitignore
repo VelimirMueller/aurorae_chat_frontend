@@ -25,6 +25,5 @@ logfiles
 .env.*
 !.env.example
 
-# ui
-ui
+# tests generated files
 tests/coverage
