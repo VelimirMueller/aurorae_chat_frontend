@@ -3,19 +3,21 @@
     <div class="h-full flex flex-col pb-2 px-4">
       <input
         v-model="prompt"
+        :disabled="props.isLoading"
         :placeholder="`${!props.isLoading ? 'Prompt:' : 'Please wait'}`"
-        class="p-2 h-3/6 w-full border-2 rounded"
+        :class="`p-2 h-3/6 w-full border-2 rounded focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-sky-500 ${props.isLoading ? 'outline-none border-cyan-400' : ''}`"
         type="text"
         @keyup.enter="submitPrompt">
       <div class="h-full w-full flex items-center justify-center ">
         <AuroraeButtonTypes
-          class="w-full h-full px-1"
+          :class="`w-full h-full px-1 ${props.isLoading ? 'pointer-events-none opacity-50' : ''}`"
           button-text="clear prompt"
           button-type="reset"
           @click="resetPrompt" />
         <AuroraeButtonTypes
-          class="w-full h-full px-1"
-          button-text="SUBMIT"
+          :class="`w-full h-full px-1 ${props.isLoading ? 'pointer-events-none opacity-90' : ''}`"
+          :disabled="props.isLoading"
+          button-text="SEND"
           button-type="submit"
           @click="submitPrompt" />
       </div>
@@ -24,7 +26,6 @@
 </template>
 
 <script setup lang=ts>
-const prompt: Ref<string> = ref('')
 const emit = defineEmits(['submit', 'reset'])
 
 const props = defineProps({
@@ -33,6 +34,8 @@ const props = defineProps({
     type: Boolean
   }
 })
+
+const prompt: Ref<string> = ref('')
 
 const resetPrompt = (): void => {
   prompt.value = resetString()

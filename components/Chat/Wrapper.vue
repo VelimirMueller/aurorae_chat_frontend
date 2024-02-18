@@ -52,6 +52,7 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
 import type { DateFormat } from '~/types'
 import { DateEnum } from '~/types'
@@ -69,7 +70,9 @@ const toggleMenu = () => {
   isMenu.value = !isMenu.value
 }
 
-isLoading.value = ref(answers.value.length !== chat.value.length).value
+isLoading.value = computed(() => {
+  return answers.value.length !== chat.value.length
+})
 
 const getDate = useDate
 

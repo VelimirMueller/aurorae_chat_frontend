@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useMainStore = defineStore('main', {
   state: () => ({
-    isLoading: ref(false),
+    isLoading: false as any,
     isMenu: false as boolean
   })
 })
