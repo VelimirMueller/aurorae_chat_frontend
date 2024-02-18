@@ -19,7 +19,7 @@
               </h4>
               <hr class="w-1/4 mr-auto ml-auto">
               <template v-for="request, idx in chat" :key="idx">
-                <ChatConversationAurorae
+                <ChatConversation
                   id="conversation"
                   :answers="answers"
                   :index="idx"
@@ -43,7 +43,7 @@
       :is-menu-wrapper="isMenu"
       class="w-screen lg:w-3/4 bg-gray-50 h-full">
       <template #side-menu>
-        <SideMenuModal
+        <ChatSideMenu
           class="h-full w-full bg-red-500 flex flex-col items-center justify-center relative"
           @toggle-modal="toggleMenu" />
       </template>

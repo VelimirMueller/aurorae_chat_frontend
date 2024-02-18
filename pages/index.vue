@@ -1,6 +1,6 @@
 <template>
   <div class="h-[90vh]">
-    <ContainerAurorae>
+    <AuroraeContainerWrapper>
       <template #content>
         <AuroraeCardWrapper
           class="w-1/4 hidden lg:flex"
@@ -30,6 +30,6 @@
         </AuroraeCardWrapper>
         <ChatWrapper />
       </template>
-    </ContainerAurorae>
+    </AuroraeContainerWrapper>
   </div>
 </template>
