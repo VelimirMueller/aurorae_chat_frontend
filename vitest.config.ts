@@ -1,13 +1,10 @@
 import { defineVitestConfig } from '@nuxt/test-utils/config'
 
 export default defineVitestConfig({
-  optimizeDeps: {
-    esbuildOptions: {
-      tsconfigRaw: {
-        compilerOptions: {
-          experimentalDecorators: true
-        }
-      }
+  test: {
+    coverage: {
+      provider: 'v8',
+      reportsDirectory: './tests/coverage'
     }
   }
 })
