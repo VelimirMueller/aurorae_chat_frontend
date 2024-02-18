@@ -27,3 +27,4 @@ logfiles
 
 # ui
 ui
+tests/coverage
