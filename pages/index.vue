@@ -28,8 +28,8 @@
           </template>
           <template #card-footer>
             <div class="flex flex-row w-full justify-center items-center h-full pb-8">
-              <AuroraeButtonTypeCta class="w-1/3 mr-2" />
-              <AuroraeButtonTypeCta class="w-1/3" />
+              <AuroraeButtonTypes class="w-1/3 mr-2" />
+              <AuroraeButtonTypes class="w-1/3 mr-2" />
             </div>
           </template>
         </AuroraeCardWrapper>

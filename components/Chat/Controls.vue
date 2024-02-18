@@ -7,19 +7,17 @@
         class="p-2 h-3/6 w-full border-2 rounded"
         type="text"
         @keyup.enter="submitPrompt">
-      <div class="h-full w-full flex items-center">
-        <button
-          type="button"
-          :class="`w-1/2 lg:w-1/4 mt-2 mr-2 ml-auto h-4/6 bg-gray-200 text-gray-900 hover:bg-gray-600 active:bg-green-700 active:m-1 ${isLoading ? 'bg-gray-700 text-gray-400 pointer-events-none' : ''}`"
-          @click="resetPrompt">
-          {{ 'clear prompt' }}
-        </button>
-        <button
-          type="button"
-          :class="`w-1/2 lg:w-1/4 mt-2 h-4/6 bg-gray-900 text-white hover:bg-gray-600 active:bg-green-700 active:m-1 ${isLoading ? 'bg-gray-700 text-gray-400 pointer-events-none' : ''}`"
-          @click="submitPrompt">
-          {{ !isLoading ? 'SEND' : 'AWAITING RESPONSE' }}
-        </button>
+      <div class="h-full w-full flex items-center justify-center ">
+        <AuroraeButtonTypes
+          class="w-full h-full px-1"
+          button-text="clear prompt"
+          button-type="reset"
+          @click="resetPrompt" />
+        <AuroraeButtonTypes
+          class="w-full h-full px-1"
+          button-text="SUBMIT"
+          button-type="submit"
+          @click="submitPrompt" />
       </div>
     </div>
   </div>
