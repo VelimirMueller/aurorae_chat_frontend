@@ -1,5 +1,5 @@
 <template>
-  <nav class="h-12 flex">
+  <nav class="h-12 flex border-b-2 border-gray-100">
     <a class="flex items-center h-full" href="#">
       <img class="w-12" src="~/assets/img/aurorae-fav-logo.png">
       <p class="w-60 text-m font-bold">The Aurorae Project</p>
