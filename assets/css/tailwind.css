@@ -2,22 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* width */
-::-webkit-scrollbar{
-    width: 3px;
-}
-/* Track */
-::-webkit-scrollbar-track {
-    background: #fff;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #4a5555b6;
-    padding-top: 2px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: rgb(65, 187, 196);
+@layer components {
+  .btn-primary {
+    @apply transit hover:shadow-lg w-full mt-2 mr-2 ml-auto h-4/6 bg-gray-700 text-gray-200 hover:bg-gray-500 hover:text-gray-100 hover:border-gray-300 border-2 active:bg-cyan-100 active:text-gray-700 active:border-cyan-400 rounded-md;
+  }
+  .btn-secondary {
+    @apply transit hover:shadow-lg w-full mt-2 mr-2 ml-auto h-4/6 bg-gray-200 text-gray-900 hover:bg-gray-300 border-2 hover:text-gray-900 hover:border-gray-500 active:bg-cyan-100 rounded-md active:bg-cyan-100 active:text-gray-800 active:border-cyan-400;
+  }
+  .btn-outline {
+    @apply transit hover:shadow-inner w-full h-12 opacity-100 border-2 border-gray-700 rounded-lg active:bg-cyan-100 active:text-gray-900 active:border-cyan-400 bg-transparent;
+  }
+  .transit {
+    @apply transition-all ease-in-out duration-300;
+  }
 }
