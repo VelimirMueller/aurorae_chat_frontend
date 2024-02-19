@@ -5,7 +5,7 @@
         v-model="prompt"
         :disabled="props.isLoading"
         :placeholder="`${!props.isLoading ? 'Prompt:' : 'Please wait'}`"
-        :class="`transit p-2 h-3/6 w-full border-2 rounded outline-none focus:border-cyan-400 focus:ring-1 focus:cyan-sky-400 ${props.isLoading ? 'outline-none border-cyan-400' : ''}`"
+        :class="`transit box-border p-2 h-3/6 w-full border rounded outline-none focus:border-cyan-400 focus:ring-1 focus:cyan-sky-400 ${!props.isLoading ? 'outline-none border-cyan-400' : 'border-white'}`"
         type="text"
         @keyup.enter="submitPrompt">
       <div class="h-full w-full flex items-center justify-center ">

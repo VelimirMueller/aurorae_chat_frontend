@@ -7,8 +7,8 @@
           :is-loading="isLoading" />
       </template>
       <template #card-body>
-        <div class="w-full h-full lg:p-4 bg-gray-100">
-          <div class="w-full h-full flex flex-col rounded-md bg-gray-50">
+        <div class="w-full h-full lg:p-4 bg-gray-50 ">
+          <div :class="`w-full h-full flex flex-col rounded-md bg-white rounded-md ${isLoading ? 'border-2 border-cyan-400' : ''}`">
             <div
               id="date"
               ref="container"
