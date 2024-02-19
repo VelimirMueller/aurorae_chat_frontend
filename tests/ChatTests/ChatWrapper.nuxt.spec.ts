@@ -26,13 +26,13 @@ describe('Check if ChatWrapper.vue behaves and mounts correctly', () => {
     expect(dateHeader.text()).toBe(formattedDate)
   })
 
-  it('Renders Card Header Text cotaining STATUS', () => {
+  it('Renders card header text cotaining STATUS', () => {
     const header = mount(ChatWrapper).find('#chatHeader')
     const chatHeaderDefaultTextSegment = 'STATUS'
     expect(header.text().indexOf(chatHeaderDefaultTextSegment)).not.toBe(-1)
   })
 
-  it('Has Send and clear prompt buttons', () => {
+  it('Has send and clear prompt buttons', () => {
     const component = mount(ChatWrapper).find('#controls')
     const componentHtml = component.html()
     expect(component.findAll('button').length).toBe(2)
