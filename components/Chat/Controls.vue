@@ -16,7 +16,7 @@
           @click="resetPrompt" />
         <AuroraeButtonTypes
           :class="`w-full h-full px-1 ${props.isLoading ? 'pointer-events-none opacity-90' : ''}`"
-          :disabled="props.isLoading"
+          :isDisabled="props.isLoading"
           button-text="SEND"
           button-type="submit"
           @click="submitPrompt" />

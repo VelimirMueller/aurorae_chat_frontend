@@ -1,6 +1,8 @@
 <template>
   <div class="w-full">
-    <button :class="buttonType ? findObjectByKey(props.buttonType, types) : types.default">
+    <button
+      :disabled="isDisabled"
+      :class="buttonType ? findObjectByKey(props.buttonType, types) : types.default">
       {{ props.buttonText }}
     </button>
   </div>
@@ -19,6 +21,12 @@ const props = defineProps({
     type: String,
     required: false,
     default: ''
+  },
+
+  isDisabled: {
+    type: Boolean,
+    required: false,
+    default: false
   },
 
   isLoading: {
