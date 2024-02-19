@@ -26,7 +26,7 @@ describe('Check if ChatWrapper.vue behaves and mounts correctly', () => {
     expect(dateHeader.text()).toBe(formattedDate)
   })
 
-  it('Renders card header text cotaining STATUS', () => {
+  it('Renders card header text containing STATUS', () => {
     const header = mount(ChatWrapper).find('#chatHeader')
     const chatHeaderDefaultTextSegment = 'STATUS'
     expect(header.text().indexOf(chatHeaderDefaultTextSegment)).not.toBe(-1)
