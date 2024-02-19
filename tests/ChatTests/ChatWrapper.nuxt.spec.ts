@@ -21,12 +21,12 @@ describe('Check if ChatWrapper.vue behaves and mounts correctly', () => {
     })
   })
 
-  it('Check if date header is set in correct format', () => {
+  it('Check if date header is set in correct format dd.mm.yy', () => {
     const dateHeader = mount(ChatWrapper).find('#date')
     expect(dateHeader.text()).toBe(formattedDate)
   })
 
-  it('Renders Card Header Text', () => {
+  it('Renders Card Header Text cotaining STATUS', () => {
     const header = mount(ChatWrapper).find('#chatHeader')
     const chatHeaderDefaultTextSegment = 'STATUS'
     expect(header.text().indexOf(chatHeaderDefaultTextSegment)).not.toBe(-1)
