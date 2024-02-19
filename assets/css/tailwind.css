@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,17 +6,17 @@
 @layer components {
   /* Buttons */
   .btn-primary {
-    @apply transit hover:shadow-lg w-full mt-2 mr-2 ml-auto h-4/6 bg-gray-700 text-gray-200 hover:bg-gray-500 hover:text-gray-100 hover:border-gray-300 border-2 active:bg-cyan-100 active:text-gray-700 active:border-cyan-400 rounded-md;
+    @apply transit hover:shadow-lg border-cyan-400 w-full mt-2 mr-2 ml-auto h-4/6 bg-gray-800 text-gray-200 hover:bg-gray-500 hover:text-gray-100 hover:border-gray-300 border-2 active:bg-cyan-100 active:text-cyan-600 active:border-cyan-400 rounded-md;
   }
   .btn-secondary {
-    @apply transit hover:shadow-lg w-full mt-2 mr-2 ml-auto h-4/6 bg-gray-200 text-gray-900 hover:bg-gray-300 border-2 hover:text-gray-900 hover:border-gray-500 active:bg-cyan-100 rounded-md active:bg-cyan-100 active:text-gray-800 active:border-cyan-400;
+    @apply transit hover:shadow-lg w-full mt-2 mr-2 ml-auto h-4/6 bg-gray-200 text-gray-900 hover:bg-gray-300 border-2 hover:text-gray-900 hover:border-gray-500 rounded-md active:bg-cyan-100 active:text-cyan-600 active:border-cyan-400;
   }
   .btn-outline {
-    @apply transit hover:shadow-inner w-full h-12 opacity-100 border-2 border-gray-700 rounded-lg active:bg-cyan-100 active:text-gray-900 active:border-cyan-400 bg-transparent;
+    @apply transit hover:shadow-inner w-full text-gray-700 h-12 opacity-100 border-2 border-gray-700 rounded-lg active:bg-cyan-100 active:text-cyan-600 active:border-cyan-400 bg-transparent;
   }
   .transit {
     @apply transition-all ease-in-out duration-300;
   }
 
-  /*  */
+  /* Inputs */
 }

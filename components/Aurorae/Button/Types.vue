@@ -12,7 +12,7 @@ const props = defineProps({
   buttonText: {
     type: String,
     required: false,
-    default: 'button'
+    default: 'default'
   },
 
   buttonType: {
