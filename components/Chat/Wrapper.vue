@@ -8,7 +8,7 @@
       </template>
       <template #card-body>
         <div class="w-full h-full lg:p-4 bg-gray-50 ">
-          <div :class="`w-full h-full flex flex-col rounded-md bg-white rounded-md ${isLoading ? 'border-2 border-cyan-400' : ''}`">
+          <div :class="`w-full h-full flex flex-col bg-white rounded-md ${isLoading ? 'border-2 border-cyan-400' : ''}`">
             <div
               id="date"
               ref="container"
@@ -18,9 +18,8 @@
                 {{ getDate(dateFormat.day) }}
               </h4>
               <hr class="w-1/4 mr-auto ml-auto">
-              <template v-for="request, idx in chat" :key="idx">
+              <template v-for="request, idx in prompts" :key="`conversation-${idx}`">
                 <ChatConversation
-                  id="conversation"
                   :answers="answers"
                   :index="idx"
                   :request="request" />
@@ -49,6 +48,9 @@
       </template>
     </AuroraeCardWrapper>
   </template>
+  <button @click="saveConversation">
+    test
+  </button>
 </template>
 
 <script setup lang="ts">
@@ -63,15 +65,16 @@ const mainStore = useMainStore()
 const { isLoading, isMenu } = storeToRefs(mainStore)
 
 const answers: Ref<string[]> = ref([])
-const chat: Ref<string[]> = ref([])
+const prompts: Ref<string[]> = ref([])
 const socket: Ref<WebSocket> = ref()
 const container: Ref<HTMLElement> = ref()
+
 const toggleMenu = () => {
   isMenu.value = !isMenu.value
 }
 
 isLoading.value = computed(() => {
-  return answers.value.length !== chat.value.length
+  return answers.value.length !== prompts.value.length
 })
 
 const getDate = useDate
@@ -82,10 +85,20 @@ const dateFormat: DateFormat = {
 
 const submitPrompt = (prompt: string): void => {
   if (!isLoading.value) {
-    chat.value.push(prompt)
+    prompts.value.push(prompt)
     socket.value.send(prompt)
     scrollToElementBottom(container.value)
   }
+}
+
+const conversation = computed(() => {
+  return prompts.value.map((prompt: string, idx: number) => {
+    return { prompt, answer: answers.value[idx] }
+  })
+})
+
+const saveConversation = () => {
+  console.log(conversation.value)
 }
 
 onMounted(() => {
