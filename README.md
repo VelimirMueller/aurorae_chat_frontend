@@ -1,5 +1,5 @@
 
-# Aurorae Chat Client
+# Aurorae Chat Client (still in development)
 
 ## What is Aurorae?
 
