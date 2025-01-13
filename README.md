@@ -17,4 +17,8 @@ All to get this frontend running in dev mode (aka test this stuff) all you need 
 
 ![grafik](https://github.com/user-attachments/assets/22973c38-4297-46e4-89d9-002945d52390)
 
+### Getting started
+
+The chat client will be used in combination with the aurorae backend: 
+
 
