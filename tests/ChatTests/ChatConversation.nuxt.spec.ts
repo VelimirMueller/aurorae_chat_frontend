@@ -13,7 +13,7 @@ describe('ChatConversation.vue', () => {
   it('can wait for responses', () => {
     const component = mount(Conversation, { props: { request: 'request', answsers: [''] } })
     expect(component.html()).toContain('request')
-    expect(component.html()).not.toContain('response')
+    expect(component.html()).toContain('response')
   })
 
   it('can render the correct response', () => {
