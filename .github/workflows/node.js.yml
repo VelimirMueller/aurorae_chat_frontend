@@ -24,5 +24,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: install dependencies (1/3)
     - run: npm install --legacy-peer-deps
+    - name: run eslint with --fix
+    - run: npm lint
+    - name: run tests with vitest
     - run: npm test
