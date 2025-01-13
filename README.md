@@ -19,6 +19,6 @@ All to get this frontend running in dev mode (aka test this stuff) all you need 
 
 ### Getting started
 
-The chat client will be used in combination with the aurorae backend: 
+The chat client will be used in combination with the aurorae backend!
 
 
