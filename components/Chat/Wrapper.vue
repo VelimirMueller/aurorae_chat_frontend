@@ -86,16 +86,6 @@ const submitPrompt = (prompt: string): void => {
   }
 }
 
-const conversation = computed(() => {
-  return prompts.value.map((prompt: string, idx: number) => {
-    return { prompt, answer: answers.value[idx] }
-  })
-})
-
-const saveConversation = () => {
-  console.log(conversation.value)
-}
-
 onMounted(() => {
   connectChat()
     .then((ws: WebSocket) => {
