@@ -9,9 +9,9 @@
             <AuroraeCardHeader area="chatbot" />
           </template>
           <template #card-body>
-            <aside class="w-full flex flex-col justify-center items-center overflow-y-auto h-[100%]">
+            <aside class="w-full flex flex-col justify-center items-center overflow-y-auto h-full">
               <AuroraeBlockquoteWrapper
-                class="h-[100%]"
+                class="h-full"
                 headline="What is Aurorae?"
                 :highlight-headline="true">
                 <div class="flex flex-col">
@@ -26,12 +26,6 @@
                 </div>
               </AuroraeBlockquoteWrapper>
             </aside>
-          </template>
-          <template #card-footer>
-            <div class="flex flex-row w-full justify-center items-end h-full bottom-0 pb-8 px-4">
-              <AuroraeButtonTypes class="w-1/3 mr-2" />
-              <AuroraeButtonTypes class="w-1/3 ml-2" />
-            </div>
           </template>
         </AuroraeCardWrapper>
         <ChatWrapper />

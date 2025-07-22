@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full lg:w-full h-full relative">
+  <div class="w-full lg:w-full h-[90vh] relative">
     <ph-x-square
       class="absolute top-0 right-0"
       :size="32"

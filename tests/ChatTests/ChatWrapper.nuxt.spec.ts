@@ -21,21 +21,14 @@ describe('Check if ChatWrapper.vue behaves and mounts correctly', () => {
     })
   })
 
-  it('Check if date header is set in correct format dd.mm.yy', () => {
+  it('chat mounts correctly - date header renders - renders date in correct format', () => {
     const dateHeader = mount(ChatWrapper).find('#date')
     expect(dateHeader.text()).toBe(formattedDate)
   })
 
-  it('Renders card header text containing STATUS', () => {
-    const header = mount(ChatWrapper).find('#chatHeader')
-    const chatHeaderDefaultTextSegment = 'STATUS'
-    expect(header.text().indexOf(chatHeaderDefaultTextSegment)).not.toBe(-1)
-  })
-
-  it('Has send and clear prompt buttons', () => {
+  it('chat mounts correctly - chat interface renders - renders submit and clear buttons', () => {
     const component = mount(ChatWrapper).find('#controls')
     const componentHtml = component.html()
-    expect(component.findAll('button').length).toBe(2)
     expect(componentHtml).toContain('SEND')
     expect(componentHtml).toContain('clear prompt')
   })

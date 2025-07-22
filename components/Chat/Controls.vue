@@ -9,13 +9,13 @@
         type="text"
         @keyup.enter="submitPrompt">
       <div class="h-full w-full flex items-center justify-center ">
-        <AuroraeButtonTypes
-          :class="`w-full h-full px-1 ${props.isLoading ? 'pointer-events-none opacity-50' : ''}`"
+        <AuroraeButtonType
+          :class="`w-full h-full px-1 max-w-[200px] ${props.isLoading ? 'pointer-events-none opacity-50' : ''}`"
           button-text="clear prompt"
           :is-disabled="props.isLoading"
           button-type="reset"
           @click="resetPrompt" />
-        <AuroraeButtonTypes
+        <AuroraeButtonType
           :class="`w-full h-full px-1 ${props.isLoading ? 'pointer-events-none opacity-50' : ''}`"
           :is-disabled="props.isLoading"
           button-text="SEND"

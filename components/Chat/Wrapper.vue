@@ -1,10 +1,8 @@
 <template>
   <template v-if="!isMenu">
-    <AuroraeCardWrapper class="lg:w-3/4 w-full bg-gray-50 h-full">
+    <AuroraeCardWrapper class="lg:w-3/4 w-[99vw] bg-gray-50 h-full">
       <template #card-header>
-        <ChatHeader
-          id="chatHeader"
-          :is-loading="isLoading" />
+        <span class="hidden h-0" />
       </template>
       <template #card-body>
         <div class="w-full h-full lg:p-4 bg-gray-50 ">
@@ -12,7 +10,7 @@
             <div
               id="date"
               ref="container"
-              class="w-full h-full overflow-y-auto p-2 rounded overflow-x-hidden">
+              class="w-full h-[80vh] overflow-y-auto p-2 rounded overflow-x-hidden">
               <hr class="w-1/4 mr-auto ml-auto">
               <h4 id="date" class="text-center">
                 {{ getDate(dateFormat.day) }}
@@ -48,9 +46,6 @@
       </template>
     </AuroraeCardWrapper>
   </template>
-  <button @click="saveConversation">
-    test
-  </button>
 </template>
 
 <script setup lang="ts">
