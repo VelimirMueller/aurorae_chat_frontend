@@ -9,7 +9,7 @@ interface DateFormat {
 }
 
 interface WebsocketResponse {
-  data: String
+  data: string
 }
 
 export type {

@@ -1,12 +1,12 @@
 <template>
   <div
-    v-if="!isMenuWrapper"
+    v-if="!props.isMenuWrapper"
     id="cardWrapper"
     class="flex flex-col h-full">
-    <div :class="`h-1/6 ${ props.isBg ? 'bg-card-header bg-cover' : '' }`">
+    <div :class="`${ props.isBg ? 'bg-card-header bg-cover  hidden md:block h-1/6' : 'h-0' }`">
       <slot name="card-header" />
     </div>
-    <div class="h-4/6">
+    <div class="h-full">
       <slot name="card-body" />
     </div>
     <div class="h-1/6">
