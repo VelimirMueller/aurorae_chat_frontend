@@ -13,5 +13,8 @@ export default defineNuxtConfig({
   },
   app: {
     baseURL: '/aurorae_chat_frontend/'
+  },
+  nitro: {
+    preset: 'static' // forces static output
   }
 })
