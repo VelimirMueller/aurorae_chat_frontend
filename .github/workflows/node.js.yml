@@ -21,8 +21,8 @@ jobs:
         run: yarn
       - name: Lint code
         run: yarn lint
-      - name: Test and coverage
-        run: yarn test --coverage
+      - name: Test
+        run: yarn test
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4
         env:
