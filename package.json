@@ -10,7 +10,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "test": "yarn vitest",
-    "test:coverage": "yarn vitest --coverage"
+    "test:coverage": "yarn vitest --coverage",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.23.3",
@@ -33,11 +34,13 @@
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.18.1",
+    "gh-pages": "^6.3.0",
     "happy-dom": "^15.10.2",
     "mock-socket": "^9.3.1",
     "nuxt": "^3.12.4",
     "pinia": "^2.1.7",
     "playwright-core": "^1.41.2",
+    "postcss-custom-properties": "^14.0.6",
     "sass": "^1.71.0",
     "socket.io-client": "^4.7.4",
     "typescript": "^5.2.2",
