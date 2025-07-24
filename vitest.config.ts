@@ -5,7 +5,15 @@ export default defineVitestConfig({
     coverage: {
       provider: 'v8',
       reportsDirectory: './tests/coverage',
-      reporter: ['text', 'html', 'lcov']
+      reporter: ['text', 'html', 'lcov'],
+      include: [
+        'components/**',
+        'composables/**',
+        'layouts/**',
+        'pages/**',
+        'server/**',
+        'app.vue'
+      ]
     }
   }
 })

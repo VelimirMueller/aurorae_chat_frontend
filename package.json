@@ -11,7 +11,8 @@
     "postinstall": "nuxt prepare",
     "test": "yarn vitest",
     "test:coverage": "yarn vitest --coverage",
-    "deploy": "gh-pages -d .output/public"
+    "deploy": "gh-pages -d .output/public",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.23.3",
