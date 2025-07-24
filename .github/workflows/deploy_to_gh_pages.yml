@@ -17,6 +17,6 @@ jobs:
         with:
           fetch-depth: 0 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: deploy to gh-pages
         run: npm run deploy
