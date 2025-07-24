@@ -14,7 +14,7 @@ export default {
     }
   },
   experimental: {
-    optimizeUniversalDefaults: true
+    optimizeUniversalDefaults: false
   },
   plugins: [],
   safelist: [
