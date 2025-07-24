@@ -10,5 +10,8 @@ export default defineNuxtConfig({
   tailwindcss: {
     exposeConfig: true,
     viewer: true
+  },
+  app: {
+    baseURL: '/aurorae_chat_frontend/'
   }
 })
