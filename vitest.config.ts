@@ -4,7 +4,8 @@ export default defineVitestConfig({
   test: {
     coverage: {
       provider: 'v8',
-      reportsDirectory: './tests/coverage'
+      reportsDirectory: './tests/coverage',
+      reporter: ['text', 'html', 'lcov']
     }
   }
 })
