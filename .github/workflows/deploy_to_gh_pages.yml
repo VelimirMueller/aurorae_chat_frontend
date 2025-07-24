@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies and build
         run: |
-          npm install
+          npm install --legacy-peer-deps
           npm run build  # or whatever builds your site into dist/
 
       - name: Upload Pages artifact
