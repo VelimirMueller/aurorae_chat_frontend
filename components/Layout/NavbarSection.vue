@@ -1,7 +1,10 @@
 <template>
   <nav class="h-12 flex border-b-2 border-gray-100">
     <a class="flex items-center h-full" href="#">
-      <img class="w-12" src="~/assets/img/aurorae-fav-logo.png">
+      <img
+        class="w-12"
+        src="~/assets/img/aurorae-fav-logo.png"
+        alt="Aurorae logo">
       <p class="w-60 text-m font-bold">The Aurorae Project</p>
     </a>
     <ul class="flex flex-row gap-4 h-full justify-center space-between flex-wrap items-center w-full">
@@ -15,8 +18,10 @@
       </template>
     </ul>
     <span class="flex items-center h-full space-x-3 w-40 justify-center">
-      <button @click="toggleMenu">
-        <ph-dots-three-outline :size="32" />
+      <button
+        aria-label="Side menu toggle"
+        @click="toggleMenu">
+        <PhDotsThreeOutline :size="32" />
       </button>
     </span>
   </nav>
@@ -31,6 +36,6 @@ const toggleMenu = () => {
   isMenu.value = !isMenu.value
 }
 const navLinks = [
-  { href: '#', text: 'back to app' }
+  { href: '/', text: 'back to app' }
 ]
 </script>

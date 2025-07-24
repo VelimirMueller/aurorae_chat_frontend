@@ -7,9 +7,9 @@ module.exports = {
   },
   extends: ['@nuxtjs/eslint-config-typescript'],
   rules: {
-    'vue/html-closing-bracket-newline': 'off',
-    'vue/multiline-html-element-content-newline': 'off',
-    'vue/multi-word-component-names': 'off'
+    'vue/html-closing-bracket-newline': 0,
+    'vue/multiline-html-element-content-newline': 0,
+    'vue/multi-word-component-names': 0
   },
   ignorePatterns: ['.nuxt/**/*']
 }

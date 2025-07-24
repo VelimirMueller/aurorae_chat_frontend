@@ -1,8 +1,8 @@
 // @vitest-environment nuxt
 import { beforeAll, it, describe, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import { conf } from '../config/config'
-import { WsMockServer } from '../utils/webSocketFactory'
+import { conf } from '../../../../config/config'
+import { WsMockServer } from '../../../../utils/webSocketFactory'
 
 import ChatWrapper from '~/components/Chat/Wrapper.vue'
 
