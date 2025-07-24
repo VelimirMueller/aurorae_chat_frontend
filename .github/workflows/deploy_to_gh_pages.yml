@@ -1,24 +1,43 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+name: Deploy to GitHub Pages
 
-name: 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ '**' ]
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  sonarqube:
-    name: Deployment CI
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node (or Python, etc. depending on your project)
+        uses: actions/setup-node@v4
         with:
-          fetch-depth: 0 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
-      - name: Build the project
-        run: npm run build
-      - name: deploy to gh-pages
-        run: npm run deploy
+          node-version: 18
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build  # or whatever builds your site into dist/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist  # change to your build output directory
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
