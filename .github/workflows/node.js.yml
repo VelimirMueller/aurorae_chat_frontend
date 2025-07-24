@@ -22,7 +22,9 @@ jobs:
       - name: Lint code
         run: yarn lint
       - name: Test
-        run: yarn test
+        run: yarn test --coverage
+      - name: Build app
+        run: yarn build
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v5
