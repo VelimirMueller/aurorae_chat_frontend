@@ -1,11 +1,3 @@
-# 🌌 Aurorae Chat Frontend
-
-**A beautiful, fast, and modern Nuxt 3 web experience**  
-Powered by Tailwind CSS, TypeScript, and built with high standards for code quality, coverage, and performance.
-
-
-> _The name “Aurorae” refers to the poetic, natural light displays in the polar skies, named after the Roman goddess of dawn._
-
 ## 📊 Project Health
 
 [![CI](https://github.com/VelimirMueller/aurorae_chat_frontend/actions/workflows/node.js.yml/badge.svg)](https://github.com/VelimirMueller/aurorae_chat_frontend/actions)
@@ -13,6 +5,14 @@ Powered by Tailwind CSS, TypeScript, and built with high standards for code qual
 [![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=VelimirMueller_aurorae_chat_frontend&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=VelimirMueller_aurorae_chat_frontend)
 
 ---
+
+# 🌌 Aurorae Chat Frontend
+
+**A beautiful, fast, and modern Nuxt 3 web experience**  
+Powered by Tailwind CSS, TypeScript, and built with high standards for code quality, coverage, and performance.
+
+
+> _The name “Aurorae” refers to the poetic, natural light displays in the polar skies, named after the Roman goddess of dawn._
 
 ## ✨ Features
 
