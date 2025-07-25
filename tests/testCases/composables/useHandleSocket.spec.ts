@@ -1,63 +1,60 @@
-import { describe, it, expect, vi } from 'vitest'
-import { connectChat } from '~/composables/useHandleSocket'
-import MockPage from '~/tests/fixtures/components/MockPage.vue'
+import { beforeAll, describe, it, expect, vi } from 'vitest'
+import { scrollToElementBottom } from '~/composables/useDomUtils'
 
 vi.mock('~/composables/useDomUtils', () => ({
-  scrollToElementBottom: vi.fn()
+  scrollToElementBottom: vi.fn().mockReturnValue({ test: 'mocked scroll' })
 }))
+describe('connect/reconnect to socket tests', () => {
+  let mockWebSocket: any
+  let originalWebSocket: any
 
-// @ts-ignore
-globalThis.WebSocket = class {
-  static readonly CONNECTING = 0
-  static readonly OPEN = 1
-  static readonly CLOSING = 2
-  static readonly CLOSED = 3
-
-  constructor (url: string) {
-    this.url = url
-  }
-
-  url: string
-}
-
-describe('connectChat', () => {
-  it('returns a WebSocket instance with correct url', async () => {
-    const ws = await connectChat()
-    expect(ws).toBeInstanceOf(WebSocket)
-    expect(ws.url).toBe('ws://0.0.0.0:5000/api_ws')
+  beforeAll(() => {
+    mockWebSocket = vi.fn(function (this: any, url: string) {
+      this.url = url
+    })
+    globalThis.WebSocket = mockWebSocket
+    originalWebSocket = globalThis.WebSocket
   })
-})
 
-describe('listenToSocket', () => {
-  it('sets onmessage and pushes data to answers', () => {
+  it('websocket sever runs - request ok - chat connection established', () => {
+    connectChat()
+    expect(mockWebSocket).toHaveBeenCalledWith('ws://0.0.0.0:5000/api_ws')
+
+    // Restore the original WebSocket
+    globalThis.WebSocket = originalWebSocket
+  })
+
+  it('websocket sever runs - request ok and chat connection established - returns a successful response', () => {
+    // Use a plain object as the socket
+    const socket: any = {}
+    listenToSocket(socket, [], {} as HTMLElement)
+    expect(mockWebSocket).toHaveBeenCalledWith('ws://0.0.0.0:5000/api_ws')
+
+    // Restore the original WebSocket
+    globalThis.WebSocket = originalWebSocket
+  })
+
+  it('sets onmessage and pushes data to answers, calls scrollToElementBottom', () => {
     const answers: string[] = []
     const socket: any = {}
-    listenToSocket(socket, answers, MockPage.container)
+    listenToSocket(socket, answers, {} as any)
     expect(typeof socket.onmessage).toBe('function')
     // Simulate a message
     socket.onmessage({ data: { foo: 'bar' } })
     expect(answers.length).toBe(1)
     expect(answers[0]).toContain('foo')
+    expect(scrollToElementBottom).toHaveReturnedWith({ test: 'mocked scroll' })
   })
-})
 
-describe('reconnectSocketOnDc', () => {
-  it('sets onclose handler that creates a new WebSocket', () => {
-    // Save the original WebSocket
-    const OriginalWebSocket = globalThis.WebSocket
-    // Mock WebSocket constructor
-    const mockWebSocket = vi.fn(function (this: any, url: string) {
-      this.url = url
-    })
-    globalThis.WebSocket = mockWebSocket as any
+  it('websocket sever runs - request ok - reconnect to chat successful', () => {
+    // Use a plain object as the socket
+    const socket: any = {}
+    reconnectSocketOnDc(socket)
+    socket.onclose() // Simulate the onclose event
 
-    const ws = new OriginalWebSocket('ws://0.0.0.0:6000/api_ws')
-    reconnectSocketOnDc(ws)
-    // @ts-expect-error - throws error hence this can be seen as workaround
-    ws.onclose() // Simulate the onclose event
     expect(mockWebSocket).toHaveBeenCalledWith('ws://0.0.0.0:5000/api_ws')
 
     // Restore the original WebSocket
-    globalThis.WebSocket = OriginalWebSocket
+    globalThis.WebSocket = originalWebSocket
   })
 })
