@@ -1,24 +1,103 @@
+# 🌌 Aurorae Chat Frontend
 
-# Aurorae Chat Client (still in development)
-
-## What is Aurorae?
-
-Aurorae is the name the llm gave itself :) It was pretty hard to force it to give itself a name but after prompt juggling a little bit it did what it needed to. However since the name is really poetic, I choose this tiny projects name shall be this one.
-
-## How to get started?
-
-This is just a small frontend nuxt application to handle the GPT4ALL llm. Check out this repository for the llm server which can connect to this frontend app:
-https://github.com/VelimirMueller/aurorae_ws_chatbot
-
-All to get this frontend running in dev mode (aka test this stuff) all you need to do is: 
-- clone this repo
-- run `yarn` or ``npm install
-- run `yarn dev` or `npm run dev`
-
-![grafik](https://github.com/user-attachments/assets/22973c38-4297-46e4-89d9-002945d52390)
-
-### Getting started
-
-The chat client will be used in combination with the aurorae backend!!!
+**A beautiful, fast, and modern Nuxt 3 web experience**  
+Powered by Tailwind CSS, TypeScript, and built with high standards for code quality, coverage, and performance.
 
 
+> _The name “Aurorae” refers to the poetic, natural light displays in the polar skies, named after the Roman goddess of dawn._
+
+## 📊 Project Health
+
+[![CI](https://github.com/VelimirMueller/aurorae_chat_frontend/actions/workflows/main.yml/badge.svg)](https://github.com/VelimirMueller/aurorae_chat_frontend/actions)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=VelimirMueller_aurorae_chat_frontend&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=VelimirMueller_aurorae_chat_frontend)
+[![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=VelimirMueller_aurorae_chat_frontend&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=VelimirMueller_aurorae_chat_frontend)
+
+---
+
+## ✨ Features
+
+- ⚡ **Nuxt 3** — Modern full-stack Vue framework
+- 🎨 **Tailwind CSS** — Utility-first, highly customizable styling
+- 🧠 **TypeScript** — Safer and more scalable development
+- ✅ **Vitest** — Blazing fast unit tests with coverage tracking
+- 📦 **CI/CD** — GitHub Actions + SonarCloud for:
+  - Code quality checks
+  - Linting
+  - 80%+ test coverage enforcement
+- 💬 **WebSocket-ready** — Real-time capabilities via `socket.io-client` and `mock-socket`
+- 🔍 **Linting & Formatting** — ESLint with full TypeScript & Vue support
+
+---
+
+## 📦 Getting Started
+
+```bash
+# Install dependencies
+yarn install
+
+# Run in development mode
+yarn dev
+
+# Build for production
+yarn build
+
+# Preview production build
+yarn preview
+
+# Static site generation
+yarn generate
+```
+
+## 🔍 Testing
+
+```bash
+# Run unit tests 
+yarn test
+```
+- Run tests with coverage (uses v8 and Istanbul) `yarn test:coverage`
+
+✅ Minimum test coverage: 80% enforced via SonarCloud integration
+
+# ✅ Code Quality & Linting
+
+```bash
+# Lint the codebase
+yarn lint
+
+# Type-check the project
+yarn type-check
+```
+Code is automatically checked on push and pull requests via GitHub CI workflows.
+
+# 🚀 Deployment
+
+Static deployment via GitHub Pages: `yarn deploy` (expiremental)
+
+Make sure the .output/public directory is up-to-date after a fresh build.
+
+# 🛠 Tech Stack
+
+| Tech                                          | Purpose                          |
+| --------------------------------------------- | -------------------------------- |
+| [Nuxt 3](https://nuxt.com)                    | Framework for SSR and SSG        |
+| [Tailwind CSS](https://tailwindcss.com)       | Styling and layout               |
+| [TypeScript](https://www.typescriptlang.org/) | Type-safe JavaScript             |
+| [Vitest](https://vitest.dev)                  | Unit testing framework           |
+| [SonarCloud](https://sonarcloud.io/)          | Code quality, lint, coverage     |
+| [ESLint](https://eslint.org/)                 | Linting with Vue + TypeScript    |
+| [Pinia](https://pinia.vuejs.org/)             | Lightweight Vue state management |
+| [Playwright](https://playwright.dev/)         | (Optional) E2E testing potential |
+
+# 🔐 SonarCloud Integration
+
+Enforces 80%+ code coverage
+
+Flags code smells, bugs, and security issues
+
+Configured via .github/workflows/ci.yml
+
+# 💬 License 
+
+© 2023 The Aurorae Project. All rights reserved.
+
+MIT or Custom License (update if needed)
