@@ -1,10 +1,13 @@
 import { describe, it, expect, vi } from 'vitest'
 import { reconnectSocketOnDc } from '~/composables/useHandleSocket'
 
+// @ts-ignore
+// Mock WebSocket globally for testing purposes
 global.WebSocket = class {
-  constructor(url) {
+  constructor (url: string) {
     this.url = url
   }
+
   url
 }
 
