@@ -3,7 +3,6 @@
 [![CI](https://github.com/VelimirMueller/aurorae_chat_frontend/actions/workflows/node.js.yml/badge.svg)](https://github.com/VelimirMueller/aurorae_chat_frontend/actions)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=VelimirMueller_aurorae_chat_frontend&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=VelimirMueller_aurorae_chat_frontend)
 [![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=VelimirMueller_aurorae_chat_frontend&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=VelimirMueller_aurorae_chat_frontend)
-[![Deploy](https://github.com/VelimirMueller/aurorae_chat_frontend/actions/workflows/deploy.yml/badge.svg)](https://github.com/VelimirMueller/aurorae_chat_frontend/actions/workflows/deploy.yml)
 [![Live – Deployed on GitHub Pages(experimental)](https://img.shields.io/badge/Live-GitHub%20Pages-blue?logo=github)](https://velimirmueller.github.io/aurorae_chat_frontend/)
 
 ---
