@@ -99,6 +99,6 @@ Configured via .github/workflows/ci.yml
 
 # 💬 License 
 
-© 2023 The Aurorae Project. All rights reserved.
+© 2023-today The Aurorae Project. All rights reserved.
 
 MIT or Custom License (update if needed)
