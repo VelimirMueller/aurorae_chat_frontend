@@ -1,0 +1,17 @@
+{
+  "divider-what-v2.svg": "01 WHAT IT DOES. A BUTTON. IT KNOWS ITS PLACE.",
+  "divider-start-v2.svg": "02 QUICK START. NOTHING TO RUN. YET.",
+  "divider-how-v2.svg": "03 HOW IT WORKS. BOXES AND ARROWS, AS PLANNED.",
+  "divider-usage-v2.svg": "04 USAGE. FACTS FROM THE OLD README. KEPT.",
+  "divider-status-v2.svg": "05 STATUS. TRUE THINGS. IN SMALL BOXES.",
+  "stats-v2-dark.svg": "2 WIDGETS PLANNED, CHAT AND VISION. 3 SERVICES BEHIND THEM. 1 ISOLATED IFRAME PER PAGE. 0 LINES OF CODE ON MAIN",
+  "stats-v2-light.svg": "2 WIDGETS PLANNED, CHAT AND VISION. 3 SERVICES BEHIND THEM. 1 ISOLATED IFRAME PER PAGE. 0 LINES OF CODE ON MAIN",
+  "features-v2-dark.svg": "ANY PAGE: A small loader element puts a launcher on any page. The widget app runs in an isolated iframe. DESKTOP AND MOBILE: Floating button on desktop, bottom sheet on mobile. Position, theme and language come from studio settings. SIGN-IN FIRST: Signed-in users only. Logged-out visitors see a sign-in prompt",
+  "features-v2-light.svg": "ANY PAGE: A small loader element puts a launcher on any page. The widget app runs in an isolated iframe. DESKTOP AND MOBILE: Floating button on desktop, bottom sheet on mobile. Position, theme and language come from studio settings. SIGN-IN FIRST: Signed-in users only. Logged-out visitors see a sign-in prompt",
+  "start-v2-dark.svg": "Terminal: $ gh repo clone VelimirMueller/synthwerk-widgets | $ cd synthwerk-widgets | $ ls | LICENSE  README.md | # that is all of it today",
+  "start-v2-light.svg": "Terminal: $ gh repo clone VelimirMueller/synthwerk-widgets | $ cd synthwerk-widgets | $ ls | LICENSE  README.md | # that is all of it today",
+  "flow-v2-dark.svg": "PAGE -> LOADER -> IFRAME -> SERVICES. The iframe isolates the widget from the host page. On purpose.",
+  "flow-v2-light.svg": "PAGE -> LOADER -> IFRAME -> SERVICES. The iframe isolates the widget from the host page. On purpose.",
+  "status-v2-dark.svg": "rewrite: planned in epic E3, chat vertical slice. old code: tag legacy-final: Nuxt 3 chat page, old GPT4All server. chat widget: planned. vision widget: planned. branching: main to dev, tag to stg, approved digest to prd",
+  "status-v2-light.svg": "rewrite: planned in epic E3, chat vertical slice. old code: tag legacy-final: Nuxt 3 chat page, old GPT4All server. chat widget: planned. vision widget: planned. branching: main to dev, tag to stg, approved digest to prd"
+}

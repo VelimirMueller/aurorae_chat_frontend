@@ -1,0 +1,44 @@
+{
+  "group": "flagship",
+  "version": "v2",
+  "dividers": [
+    {"key": "what",   "index": "01", "title": "WHAT IT DOES", "caption": "A BUTTON. IT KNOWS ITS PLACE.",   "art": "strip-flagship-1"},
+    {"key": "start",  "index": "02", "title": "QUICK START",  "caption": "NOTHING TO RUN. YET.",            "art": "strip-flagship-2"},
+    {"key": "how",    "index": "03", "title": "HOW IT WORKS", "caption": "BOXES AND ARROWS, AS PLANNED.",   "art": "strip-flagship-3"},
+    {"key": "usage",  "index": "04", "title": "USAGE",        "caption": "FACTS FROM THE OLD README. KEPT.", "art": "strip-flagship-4"},
+    {"key": "status", "index": "05", "title": "STATUS",       "caption": "TRUE THINGS. IN SMALL BOXES.",    "art": "strip-flagship-5"}
+  ],
+  "panels": [
+    {"key": "stats", "type": "stats", "title": "SYNTHWERK-WIDGETS IN NUMBERS", "items": [
+      {"value": "2", "label": "WIDGETS PLANNED, CHAT AND VISION"},
+      {"value": "3", "label": "SERVICES BEHIND THEM"},
+      {"value": "1", "label": "ISOLATED IFRAME PER PAGE"},
+      {"value": "0", "label": "LINES OF CODE ON MAIN"}
+    ]},
+    {"key": "features", "type": "cards", "title": "WHAT LANDS ON YOUR PAGE", "items": [
+      {"title": "ANY PAGE", "text": "A small loader element puts a launcher on any page. The widget app runs in an isolated iframe."},
+      {"title": "DESKTOP AND MOBILE", "text": "Floating button on desktop, bottom sheet on mobile. Position, theme and language come from studio settings."},
+      {"title": "SIGN-IN FIRST", "text": "Signed-in users only. Logged-out visitors see a sign-in prompt."}
+    ]},
+    {"key": "start", "type": "terminal", "title": "QUICK START", "lines": [
+      "$ gh repo clone VelimirMueller/synthwerk-widgets",
+      "$ cd synthwerk-widgets",
+      "$ ls",
+      "LICENSE  README.md",
+      "# that is all of it today"
+    ]},
+    {"key": "flow", "type": "flow", "title": "ONE PAGE, LEFT TO RIGHT", "nodes": [
+      {"title": "PAGE", "sub": "any website or app"},
+      {"title": "LOADER", "sub": "small element"},
+      {"title": "IFRAME", "sub": "chat, vision", "hot": true},
+      {"title": "SERVICES", "sub": "llm, vision, identity"}
+    ], "caption": "The iframe isolates the widget from the host page. On purpose."},
+    {"key": "status", "type": "status", "title": "WHAT EXISTS TODAY", "rows": [
+      {"label": "rewrite", "value": "planned in epic E3, chat vertical slice", "state": "planned"},
+      {"label": "old code", "value": "tag legacy-final: Nuxt 3 chat page, old GPT4All server", "state": "ok"},
+      {"label": "chat widget", "value": "planned", "state": "planned"},
+      {"label": "vision widget", "value": "planned", "state": "planned"},
+      {"label": "branching", "value": "main to dev, tag to stg, approved digest to prd", "state": "ok"}
+    ]}
+  ]
+}
