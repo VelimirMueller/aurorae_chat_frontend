@@ -3,5 +3,9 @@
   "tagline": "Embeds AI. Keeps its distance.",
   "sublabel": "WIDGETS · CHAT · VISION · IFRAME",
   "bannerVersion": "v2",
-  "art": {"file": "v2/synthwerk-widgets.png", "seed": 316}
+  "art": {
+    "file": "v2/synthwerk-widgets.png",
+    "seed": 316
+  },
+  "status": "REWRITE"
 }
