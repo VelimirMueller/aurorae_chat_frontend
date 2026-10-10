@@ -1,0 +1,3 @@
+# Generated SVGs embed base64 art (text outlined to paths).
+# Diff them as binary and collapse them on GitHub.
+assets/**/*.svg binary
